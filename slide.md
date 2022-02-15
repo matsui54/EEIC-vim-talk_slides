@@ -18,14 +18,7 @@ by [matsui54](https://github.com/matsui54)
 - 自己紹介
 - VimとNeovim
 - プラグインの紹介
-  - ファイル検索・ファイラー
-  - 自動補完
-  - LSP
-  - git操作
-  - Vimの組み込み機能拡張系
-  - 見た目系
-  - サクッと実行
-  - 日本語入力
+- なぜVSCodeではなく、Vimを使うのか
 
 ---
 
@@ -33,12 +26,23 @@ by [matsui54](https://github.com/matsui54)
 
 - 松井晴輝(GitHub ハンドルネーム: matsui54)
 - Vim歴: 2年弱
-- Vim戦闘力[^1]: 2400
-- Vimを始めたきっかけ: 
+- 使っているエディタ: Neovim
+- Vimの設定ファイルの行数: 
+  2400以上（コメント・空白行除く）
+- Vim関係の活動: 
+  - 自作プラグイン開発
+  - プラグインへのプルリクエストなど
+  - 本体にも関わっていきたい...
 
-![bg right:30% fit](https://2.bp.blogspot.com/-bhubAsodZjU/W5IAOpox-xI/AAAAAAABOzA/wBvRPnVclBEygI1SIvx9GyP2aaVWcmqjwCLcBGAs/s800/undou_deadlisft_man.png)
+![bg right:20% 90%](https://avatars.githubusercontent.com/u/63794197?v=4)
 
 [^1]: https://vim-jp.org/vim-users-jp/2009/07/10/Hack-39.html
+
+---
+
+## Vimに抱くイメージ
+- 古い
+- ダサい
 
 ---
 
@@ -67,7 +71,8 @@ by [matsui54](https://github.com/matsui54)
 
 ### ファイル検索
 - ファジーファインダー
-  - :star: [denite.nvim]()
+  - :star: [denite.nvim]() ddu.vimに開発は移行。設定は難しい。
+  - [fzf.vim](https://github.com/junegunn/fzf.vim) 一番有名。
   - [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) （Neovim専用）
 Vimにはファジーファインダーがたくさんあるので、興味のあるかたは[こちらの記事](https://zenn.dev/yutakatay/articles/vim-fuzzy-finder)をどうぞ。
 
@@ -88,6 +93,9 @@ LSPはこれらの便利機能をプロトコルとして定義し、エディ�
 => Vim/Emacs等でもLSP クライアントを入れればVSCodeの編集機能を使えるように!
 
 ![w:600](https://code.visualstudio.com/assets/api/language-extensions/language-server-extension-guide/lsp-languages-editors.png)
+
+<!-- _footer: https://code.visualstudio.com/assets/api/language-extensions/language-server-extension-guide/lsp-languages-editors.png -->
+
 
 ---
 
@@ -117,6 +125,12 @@ LSPはこれらの便利機能をプロトコルとして定義し、エディ�
 ---
 
 ### ddc.vim
+- source、filterの分離という考え方
+  - sourceの例
+    - buffer、snippet、辞書、file
+  - filterの例
+    - fuzzy filter（"hf"で、"hoge_foo"にマッチする）
+    - 編集距離順にソートするfilter
 
 ---
 
@@ -173,6 +187,15 @@ for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {
 
 ![drop-shadow](https://raw.githubusercontent.com/wiki/itchyny/lightline.vim/image/solarized_light.png)
 
+<!-- Scoped style -->
+<style scoped>
+h5 {
+  font-size: 20px;
+}
+</style>
+
+##### https://raw.githubusercontent.com/wiki/itchyny/lightline.vim/image/solarized_light.png
+
 ---
 
 ### その他便利なプラグイン
@@ -180,7 +203,7 @@ for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {
 - [caw.vim]() コメントアウトプラグイン。
 - [calendar.vim]() カレンダーを出せる。
 - [indentLine]() インデントを可視化する。
-- [vim-tex]() texのプレビュー
+- [vim-tex]() texのプレビュー等。
 
 ---
 
@@ -192,4 +215,10 @@ for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {
 - [上達したいVim初心者のための設定・プラグインの見つけ方、学び方](https://eh-career.com/engineerhub/entry/2019/01/28/103000) 
   基本的な心構えについて。記事内で言及されているvim-polyglotは現在はおすすめしません。
 - [無人島に持っていく(Neo)vimプラグイン10選 (TS開発環境編)](https://zenn.dev/yano/articles/vim_plugin_top_10)
-- [Neovim v0.5リリース記念 v0.5の新機能を紹介します【前編】](https://lab.mo-t.com/blog/neovim-v05-introduction-new-features-part-1) Neovimについて知りたい方向け。
+- [Neovim v0.5リリース記念 v0.5の新機能を紹介します【前編】](https://lab.mo-t.com/blog/neovim-v05-introduction-new-features-part-1) 
+  Neovimについて知りたい方向け。
+
+---
+
+# :qa!
+
